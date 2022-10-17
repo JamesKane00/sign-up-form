@@ -1,5 +1,7 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.2rem;
+    line-height: 1.2rem;
 }
 
 body {
@@ -10,8 +12,26 @@ body {
 body #banner {
     background-color: steelblue;
     flex: 1;
-    flex-basis: 40%;
+    flex-basis: 50%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('/img/matrix.png');
+    background-size: 100%;
+}
+
+#banner #logo {
+    background-color: black;
+    color: white;
+    height: 120px;
+    width: 100%;
+    opacity: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
 }
 
 body #signup-container {
@@ -19,14 +39,12 @@ body #signup-container {
     display: flex;
     flex-direction: column;
     flex-basis: 60%;
-    padding: 24px;
-    margin: 24px;
+    padding: 40px 80px;
     height: 100vh;
+    background-color: black;
+    color: white;
 }
 
-#form-container {
-    margin: 24px 0px;
-}
 
 #form-container h1, #form-container li {
     margin: 24px 0px; 
@@ -35,6 +53,10 @@ body #signup-container {
 #form-container h1 {
     text-align: center;
     font-size: 1.5rem;
+}
+
+#form {
+    margin-top: 3rem;
 }
 
 legend {
@@ -46,6 +68,12 @@ legend {
 .form-row {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+}
+fieldset {
+    margin: 2rem 0rem;
+    padding: 12px 36px;
+    box-shadow: green 0px 4px 12px;
 }
 
 .form-row > label {
@@ -54,14 +82,35 @@ legend {
 
 .form-row > input {
     flex: 2;
+    background-color: grey;
+    border-radius: 2px;
+    opacity: 100%;
+    color: black;
+    border: none;
+    box-shadow: green;
 }
 
 #welcome-text {
     text-align: left;
+    line-height: 1.2rem;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 #create-account {
-    height: 40px;
-    width: 140px;
+    height: 60px;
+    width: 190px;
     cursor: pointer;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    box-shadow: green 0px 4px 12px;
 }
+
