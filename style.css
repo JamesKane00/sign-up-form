@@ -11,13 +11,13 @@ body {
 
 body #banner {
     background-color: steelblue;
-    flex: 1;
-    flex-basis: 50%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-width: 150px;
+    flex-basis: 50%;
     background-image: url('/img/matrix.png');
     background-size: 100%;
 }
@@ -35,14 +35,20 @@ body #banner {
 }
 
 body #signup-container {
-    flex: 3;
     display: flex;
     flex-direction: column;
-    flex-basis: 60%;
-    padding: 40px 80px;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    padding: 0px 80px;
     height: 100vh;
     background-color: black;
     color: white;
+    overflow: auto;
+}
+
+strong {
+    color: blue;
 }
 
 
@@ -72,8 +78,9 @@ legend {
 }
 fieldset {
     margin: 2rem 0rem;
-    padding: 12px 36px;
+    padding: 8px 36px;
     box-shadow: green 0px 4px 12px;
+    border-radius: 8px;
 }
 
 .form-row > label {
@@ -91,9 +98,11 @@ fieldset {
 }
 
 #welcome-text {
-    text-align: left;
+    text-align: center;
     line-height: 1.2rem;
     font-weight: bold;
+    font-size: 20px; 
+    line-height: 24px;
 }
 
 .button-container {
@@ -105,12 +114,18 @@ fieldset {
 
 #create-account {
     height: 60px;
-    width: 190px;
+    width: 220px;
     cursor: pointer;
     background-color: black;
     color: white;
     border-radius: 8px;
     border: none;
     box-shadow: green 0px 4px 12px;
+    font-size: 16px;
+    padding: 12px;
 }
 
+#create-account:hover {
+    color: white;
+    border: 2px solid green;
+}
