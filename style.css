@@ -2,6 +2,7 @@
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 0.2rem;
     line-height: 1.2rem;
+    color: #c4c4c4;
 }
 
 body {
@@ -88,13 +89,22 @@ fieldset {
 }
 
 .form-row > input {
+    appearance: none;
+    outline: none;
+    height: 22px;
+    letter-spacing: 0;
     flex: 2;
     background-color: grey;
-    border-radius: 2px;
+    border-radius: 8px;
     opacity: 100%;
     color: black;
     border: none;
     box-shadow: green;
+}
+
+.form-row > input:focus, 
+.form-row > input:valid {
+    box-shadow: green 0px 1px 3px 0px, green 0px 0px 0px 1px;
 }
 
 #welcome-text {
@@ -117,7 +127,7 @@ fieldset {
     width: 220px;
     cursor: pointer;
     background-color: black;
-    color: white;
+    color: #adadad;
     border-radius: 8px;
     border: none;
     box-shadow: green 0px 4px 12px;
