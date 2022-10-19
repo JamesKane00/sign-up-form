@@ -107,6 +107,11 @@ fieldset {
     box-shadow: green 0px 1px 3px 0px, green 0px 0px 0px 1px;
 }
 
+.form-row > input:invalid {
+    box-shadow: red 0px 1px 3px 0px, red 0px 0px 0px 1px;
+}
+}
+
 #welcome-text {
     text-align: center;
     line-height: 1.2rem;
