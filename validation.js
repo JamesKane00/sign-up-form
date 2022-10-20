@@ -5,42 +5,43 @@ const email = document.getElementById('email');
 const tel = document.getElementById('tel');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirm-password');
+const submit = document.getElementById('create-account');
 
-
-firstname.addEventListener('change', testFirstName);
 password.addEventListener('change', testPassword);
-
-function testFirstName(e) {
-    let firstName = e.target;
-    if (!firstName.checkValidity()) {
-        firstName.setCustomValidity('Please Enter A Valid First Name');
-        firstName.reportValidity();
-    } 
-}
+confirmPassword.addEventListener('change', testPassword);
+submit.addEventListener('click', submitForm);
 
 function testPassword(e) {
     let password = e.target;
-    let currently = password.checkValidity();
+    let valid = password.checkValidity();
 
-    if(currently) {
+    password.setCustomValidity('');
+
+    if(valid) {
         let passReg = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$');
         if (passReg.test(password.value) === false) {
             password.setCustomValidity('Password must contain at least one capital letter, one number and one special character');
             password.reportValidity();
         }
+        if (confirmPassword.value != password.value) {
+            password.setCustomValidity('Ensure Both Password Fields Match.');
+            password.reportValidity();
+        } 
     }
 }
 
-function testPasswordConfirmation(e) {
 
-} 
+function submitForm(e) {
+    form.addEventListener('submit', (e) => {
+        const submittedForm = e.target;
 
-form.addEventListener('submit', (e) => {
-    const submittedForm = e.target;
-
-    if (submittedForm.checkValidity()) {
-
-    } else {
-        e.preventDefault();
-    }
-});
+        if (submittedForm.checkValidity()) {
+            Array.from(form.elements).forEach(i => {
+                i.value = "";
+                window.location.reload();
+            })
+        } else {
+            e.preventDefault();
+        }
+    });
+}

@@ -102,15 +102,10 @@ fieldset {
     box-shadow: green;
 }
 
-.form-row > input:focus, 
 .form-row > input:valid {
-    box-shadow: green 0px 1px 3px 0px, green 0px 0px 0px 1px;
+    box-shadow: green 0px 1px 4px 0px, green 0px 0px 0px 2px;
 }
 
-.form-row > input:invalid {
-    box-shadow: red 0px 1px 3px 0px, red 0px 0px 0px 1px;
-}
-}
 
 #welcome-text {
     text-align: center;
