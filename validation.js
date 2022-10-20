@@ -9,6 +9,7 @@ const submit = document.getElementById('create-account');
 
 password.addEventListener('change', testPassword);
 confirmPassword.addEventListener('change', testPassword);
+tel.addEventListener('change', testTel);
 submit.addEventListener('click', submitForm);
 
 function testPassword(e) {
@@ -30,6 +31,19 @@ function testPassword(e) {
     }
 }
 
+function testTel(e) {
+    let number = e.target;
+
+    number.setCustomValidity('');
+
+    if(telValid) {
+        let telReg = new RegExp('\d{3}[ -.]\d{3}[ -.]\d{4}');
+        if (telReg.test(number.value) == false) {
+            number.setCustomValidity('Please enter a valid US phone number (###-###-####)');
+            number.reportValidity();
+        }
+    }
+}
 
 function submitForm(e) {
     form.addEventListener('submit', (e) => {
